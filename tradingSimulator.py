@@ -36,9 +36,9 @@ from options import cryptos
 ###############################################################################
 
 # Variables defining the default trading horizon
-startingDate = '2017-1-1'
+startingDate = '2019-1-1'
 endingDate = '2021-10-10'
-splitingDate = '2020-6-22'
+splitingDate = '2021-03-08'
 # startingDate = '2019-03-29'
 # endingDate = '2021-01-01'
 # splitingDate = '2020-07-01' # ! kinda sus, proper split date ?
