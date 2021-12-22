@@ -72,6 +72,7 @@ class DataAugmentation:
             shiftMagnitude = max(-minValue, shiftMagnitude)
         
         # Shifting of the volume time series
+        print(newTradingEnv.data['Close'])
         newTradingEnv.data['Volume'] += shiftMagnitude
 
         # Return the new trading environment generated

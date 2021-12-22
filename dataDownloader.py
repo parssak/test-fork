@@ -41,14 +41,6 @@ class AlphaVantage:
     """
 
     def __init__(self):
-        """
-        GOAL: Object constructor initializing the class variables. 
-
-        INPUTS: /      
-
-        OUTPUTS: /
-        """
-
         self.link = 'https://www.alphavantage.co/query'
         self.apikey = 'HCJGWX2E4SVFGP8P'
         self.datatype = 'csv'
@@ -66,12 +58,14 @@ class AlphaVantage:
         OUTPUTS:    - data: Pandas dataframe containing the stock market data.
         """
         isCrypto = marketSymbol in cryptos.values()
-        print("Getting daily data for {}, isCrypto? {}".format(marketSymbol, isCrypto))
-        
+        print("Getting daily data for {}, isCrypto? {}".format(
+            marketSymbol, isCrypto))
+
         # Send an HTTP request to the Alpha Vantage API
         payload = {'function': 'TIME_SERIES_DAILY_ADJUSTED', 'symbol': marketSymbol,
                    'outputsize': self.outputsize, 'datatype': self.datatype,
-                   'apikey': self.apikey}
+                   'apikey': self.apikey, 'outputsize': 'full'
+                   }
 
         if (isCrypto):
             payload['function'] = 'DIGITAL_CURRENCY_DAILY'
@@ -87,7 +81,7 @@ class AlphaVantage:
         self.data = self.processDataframe(data, isCrypto)
         if(startingDate != 0 and endingDate != 0):
             self.data = self.data.loc[startingDate:endingDate]
-        
+
         return self.data
 
     def getIntradayData(self, marketSymbol, startingDate, endingDate, timePeriod=60):
@@ -149,7 +143,7 @@ class AlphaVantage:
                                                              "low (USD)": "Low",
                                                              "close (USD)": "Close",
                                                              "volume": "Volume"})
-                        
+
         else:
             dataframe['close'] = dataframe['adjusted_close']
             del dataframe['adjusted_close']
@@ -165,6 +159,8 @@ class AlphaVantage:
         dataframe.index.names = ['Timestamp']
         # Adjust the format of the index values
         dataframe.index = dataframe.index.map(pd.Timestamp)
+        CSVHandler().dataframeToCSV('Data/boss_dog', dataframe)
+
         return dataframe
 
 
