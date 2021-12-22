@@ -50,7 +50,7 @@ actionSpace = 2
 
 # Variables setting up the default transaction costs
 percentageCosts = [0, 0.1, 0.2]
-transactionCosts = percentageCosts[1]/100
+transactionCosts = 0.01
 
 # Variables specifying the default capital at the disposal of the trader
 money = 100000
