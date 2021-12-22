@@ -139,7 +139,6 @@ class AlphaVantage:
 
         # Remove useless columns
         if (isCrypto):
-            # open(USD)  high(USD)  low(USD)  close(USD)  open(USD).1  high(USD).1  low(USD).1  close(USD).1 volume  market cap(USD) timestamp
             del dataframe['open (USD).1']
             del dataframe['high (USD).1']
             del dataframe['low (USD).1']
@@ -162,8 +161,6 @@ class AlphaVantage:
                                                              "close": "Close",
                                                              "volume": "Volume"})
 
-        print(dataframe)
-        print('Adapting...')
         # Adapt the dataframe index and column names
         dataframe.index.names = ['Timestamp']
         # Adjust the format of the index values

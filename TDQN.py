@@ -772,7 +772,7 @@ class TDQN:
         # If required, print the strategy performance in a table
         if showPerformance:
             analyser = PerformanceEstimator(trainingEnv.data)
-            analyser.displayPerformance('TDQN')
+            analyser.displayPerformance('TDQN Training')
         
         # Closing of the tensorboard writer
         self.writer.close()
@@ -832,7 +832,7 @@ class TDQN:
         # If required, print the strategy performance in a table
         if showPerformance:
             analyser = PerformanceEstimator(testingEnv.data)
-            analyser.displayPerformance('TDQN')
+            analyser.displayPerformance('TDQN Testing')
         
         return testingEnv
 
