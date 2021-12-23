@@ -662,7 +662,7 @@ class TDQN:
             marketSymbol = trainingEnv.marketSymbol
             startingDate = trainingEnv.endingDate
             # endingDate = '2020-1-1'
-            endingDate = '2021-10-10'
+            endingDate = '2021-12-22'
             money = trainingEnv.data['Money'][0]
             stateLength = trainingEnv.stateLength
             transactionCosts = trainingEnv.transactionCosts
@@ -924,7 +924,7 @@ class TDQN:
         marketSymbol = trainingEnv.marketSymbol
         startingDate = trainingEnv.endingDate
         # endingDate = '2020-1-1'
-        endingDate = '2021-10-10'
+        endingDate = '2021-12-22'
 
         money = trainingEnv.data['Money'][0]
         stateLength = trainingEnv.stateLength

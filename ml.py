@@ -1,7 +1,7 @@
 from tradingSimulator import TradingSimulator
 class ML():
     def __init__(self):
-        self.stock = "Ethereum"
+        self.stock = "Bitcoin"
         self.strategy = "TDQN"
         self.simulator = TradingSimulator()
 
