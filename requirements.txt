@@ -19,6 +19,3 @@ tensorboard
 
 # OpenAI Gym RL framework
 gym
-
-# REST
-flask
